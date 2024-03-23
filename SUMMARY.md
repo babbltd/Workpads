@@ -1,3 +1,3 @@
 # Table of contents
 
-* [Why Workpads](README.md)
+* [Why Workpads?](README.md)
