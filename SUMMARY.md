@@ -4,6 +4,7 @@
 * [Records for Business](records-for-business.md)
 * [Future of Workpads](future-of-workpads.md)
 * [Pillars of Protocol](pillars-of-protocol.md)
+* [Overview](overview.md)
 
 ## Architecture
 
