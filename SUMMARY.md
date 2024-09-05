@@ -1,5 +1,6 @@
 # Table of contents
 
+* [App](https://workpads.app)
 * [Why Workpads?](README.md)
 * [Records for Business](records-for-business.md)
 * [Future of Workpads](future-of-workpads.md)
@@ -42,7 +43,3 @@
 * [Manage](protocol/manage.md)
 * [Template](protocol/template.md)
 * [Link](protocol/link.md)
-
-***
-
-* [App](https://workpads.app)
