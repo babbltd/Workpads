@@ -2,10 +2,14 @@
 
 * [App](https://workpads.app)
 * [Why Workpads?](README.md)
+* [CLI Cheat Sheet](cheat-sheet.md)
 * [Records for Business](records-for-business.md)
 * [Future of Workpads](future-of-workpads.md)
 * [Pillars of Protocol](pillars-of-protocol.md)
 * [Overview](overview.md)
+* [CLI Quickstart](cli.md)
+* [Conformance Tests](conformance-tests/README.md)
+  * [BASICS Dirty Test 2026-04-20](conformance-tests/basics-dirty-2026-04-20-workpads-cli.md)
 
 ## Architecture
 
@@ -29,6 +33,14 @@
   * [Media](architecture/blocks/media.md)
   * [Time](architecture/blocks/time.md)
 * [Modules](architecture/modules.md)
+  * [Microservices In Practice](architecture/microservices-practice.md)
+  * [Gateway Service](architecture/services/gateway-service.md)
+  * [Template Registry Service](architecture/services/template-registry-service.md)
+  * [Record Service](architecture/services/record-service.md)
+  * [Storage Policy Service](architecture/services/storage-policy-service.md)
+  * [Codec Service](architecture/services/codec-service.md)
+  * [Link Service](architecture/services/link-service.md)
+  * [Comment Service](architecture/services/comment-service.md)
 * [Action Items](architecture/action-items/README.md)
   * [Types of Actions](architecture/action-items/types-of-actions.md)
 * [Checklists](architecture/checklists.md)
@@ -41,5 +53,16 @@
 * [Edit](protocol/edit.md)
 * [Share](protocol/share.md)
 * [Manage](protocol/manage.md)
+* [Storage Policy](protocol/storage-policy.md)
 * [Template](protocol/template.md)
+* [PADS Field Matrix](protocol/pads-field-matrix.md)
 * [Link](protocol/link.md)
+* [Codec Benchmark Plan](protocol/codec-benchmark-plan.md)
+* [CLI Surface](protocol/cli.md)
+
+## Templates
+
+* [Templates](templates/README.md)
+* [Service Basic KV](templates/svc-basic.kv)
+* [Service Basic YAML](templates/svc-basic.yaml)
+* [Service Basic Runtime JSON](templates/runtime/svc-basic.v1.json)

@@ -1,0 +1,7 @@
+run=2026-04-20T09-46-25-649Z-workpads-core-assess
+target=/Users/mp/Documents/Vaults/babb/repos/workpads
+blockingFailures=3
+pass=4
+fail=3
+partial=4
+error=0

@@ -1,0 +1,14 @@
+template_id: svc-basic
+version: 1
+title: Service Basic
+variants: plain,social
+pads: process,actions,details,story
+field: job|Job title|text|required|max=120|pad=process|key=j
+field: customer|Customer|text|optional|max=120|pad=process|key=c
+field: date|Date|date|optional|max=10|pad=process|key=d
+field: location|Location|text|optional|max=160|pad=process|key=l
+field: meeting_time|Meeting time|text|optional|max=40|pad=process|key=mt
+field: actions[].title|Action title|text|optional|max=100|pad=actions|key=at
+field: actions[].notes|Action notes|text|optional|max=300|pad=actions|key=an
+field: details|Details|text|optional|max=500|pad=details|key=de
+field: story|Story|text|optional|max=2000|pad=story|key=st

@@ -1,0 +1,29 @@
+{
+  "templateId": "svc-basic",
+  "version": 1,
+  "title": "Service Basic",
+  "variants": ["plain", "social"],
+  "pads": ["process", "actions", "details", "story"],
+  "compactKeys": {
+    "job": "j",
+    "customer": "c",
+    "date": "d",
+    "location": "l",
+    "meeting_time": "mt",
+    "actions[].title": "at",
+    "actions[].notes": "an",
+    "details": "de",
+    "story": "st"
+  },
+  "fields": [
+    { "id": "job", "label": "Job title", "type": "text", "required": true, "max": 120, "pad": "process" },
+    { "id": "customer", "label": "Customer", "type": "text", "required": false, "max": 120, "pad": "process" },
+    { "id": "date", "label": "Date", "type": "date", "required": false, "max": 10, "pad": "process" },
+    { "id": "location", "label": "Location", "type": "text", "required": false, "max": 160, "pad": "process" },
+    { "id": "meeting_time", "label": "Meeting time", "type": "text", "required": false, "max": 40, "pad": "process" },
+    { "id": "actions[].title", "label": "Action title", "type": "text", "required": false, "max": 100, "pad": "actions" },
+    { "id": "actions[].notes", "label": "Action notes", "type": "text", "required": false, "max": 300, "pad": "actions" },
+    { "id": "details", "label": "Details", "type": "text", "required": false, "max": 500, "pad": "details" },
+    { "id": "story", "label": "Story", "type": "text", "required": false, "max": 2000, "pad": "story" }
+  ]
+}

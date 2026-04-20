@@ -1,0 +1,13 @@
+{
+  "name": "workpads-cli",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Simple-first Workpads CLI",
+  "bin": {
+    "workpads": "./workpads.js"
+  },
+  "scripts": {
+    "workpads": "node ./workpads.js",
+    "template:validate": "node ./workpads.js template:validate --file ./templates/svc-basic.kv --format kv"
+  }
+}
