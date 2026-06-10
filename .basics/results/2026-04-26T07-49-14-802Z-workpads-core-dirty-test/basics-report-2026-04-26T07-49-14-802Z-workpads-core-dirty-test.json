@@ -1,0 +1,151 @@
+{
+  "run": {
+    "id": "2026-04-26T07-49-14-802Z-workpads-core-dirty-test",
+    "mode": "dirty-test",
+    "target": "/Users/mp/Documents/Vaults/babb/repos/workpads",
+    "tier": "core",
+    "profiles": [
+      "shared-core",
+      "software"
+    ],
+    "timestamp": "2026-04-26T07:49:14.877Z",
+    "toolVersion": "1.1.0",
+    "rulePack": "dirty-core-v1"
+  },
+  "summary": {
+    "pass": 4,
+    "fail": 1,
+    "partial": 2,
+    "na": 0,
+    "error": 0,
+    "blockingFailures": 1
+  },
+  "results": [
+    {
+      "ruleId": "BASICS-TIER-010",
+      "status": "partial",
+      "severity": "medium",
+      "observed": "Core entry controls are incomplete (4/5).",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/cli.md"
+        },
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/conformance-tests/event-schema.md"
+        },
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/conformance-tests/degraded-mode-matrix.md"
+        },
+        {
+          "type": "code-scan",
+          "detail": "Detected local create/edit signals."
+        }
+      ],
+      "remediation": "Close missing controls: event schema, compatibility policy, degraded matrix, and local create/edit evidence.",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-EVID-002",
+      "status": "pass",
+      "severity": "info",
+      "observed": "Event schema artifact found.",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/conformance-tests/event-schema.md"
+        }
+      ],
+      "remediation": "",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-EVID-004",
+      "status": "partial",
+      "severity": "medium",
+      "observed": "Only one required policy artifact found.",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/conformance-tests/deviation-registry.md"
+        }
+      ],
+      "remediation": "Publish both compatibility-policy.md and deviation-registry.md.",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-EVID-005",
+      "status": "pass",
+      "severity": "info",
+      "observed": "Degraded mode matrix and test evidence location found.",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/conformance-tests/degraded-mode-matrix.md"
+        },
+        {
+          "type": "path",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/conformance-tests"
+        }
+      ],
+      "remediation": "",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-SC-041",
+      "status": "pass",
+      "severity": "info",
+      "observed": "Local create/edit and local persistence signals detected.",
+      "evidence": [
+        {
+          "type": "code-scan",
+          "detail": "Detected create/edit and local storage patterns."
+        }
+      ],
+      "remediation": "",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-SC-050",
+      "status": "pass",
+      "severity": "info",
+      "observed": "Command semantics and event schema baselines are published.",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/cli.md"
+        },
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/conformance-tests/event-schema.md"
+        }
+      ],
+      "remediation": "",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-SC-051",
+      "status": "fail",
+      "severity": "high",
+      "observed": "No compatibility policy artifact found.",
+      "evidence": [
+        {
+          "type": "search",
+          "detail": "Checked common compatibility-policy paths."
+        }
+      ],
+      "remediation": "Publish compatibility-policy.md with additive/breaking/migration signaling.",
+      "blocking": true
+    }
+  ],
+  "confidence": {
+    "level": "medium-high",
+    "rationale": "Deterministic file/path checks plus heuristic code-signal checks."
+  },
+  "limits": [
+    "No exhaustive command fuzzing in v1.",
+    "Heuristic code-pattern checks can produce partial confidence."
+  ]
+}

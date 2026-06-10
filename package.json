@@ -1,8 +1,8 @@
 {
-  "name": "workpads-cli",
+  "name": "workpads",
   "version": "0.1.0",
   "private": true,
-  "description": "Simple-first Workpads CLI",
+  "description": "Workpads orchestrator and reference CLI (v0.x legacy encoding)",
   "bin": {
     "workpads": "./workpads.js"
   },

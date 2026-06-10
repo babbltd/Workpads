@@ -1,0 +1,42 @@
+[
+  {
+    "id": "loc_000004",
+    "seq": 4,
+    "templateId": "svc-basic",
+    "variant": "plain",
+    "process": {
+      "job": "Storage-bound demo"
+    },
+    "actions": [],
+    "details": "",
+    "story": "",
+    "comments": [],
+    "createdAt": "2026-04-20T08:23:01.076Z",
+    "updatedAt": "2026-04-20T08:45:53.823Z",
+    "storage": {
+      "businessId": "biz_002",
+      "mode": "stored",
+      "ttlHours": null,
+      "source": "record-override",
+      "resolvedAt": "2026-04-20T08:23:01.203Z",
+      "expiresAt": null
+    }
+  },
+  {
+    "id": "loc_000006",
+    "seq": 6,
+    "templateId": "svc-basic",
+    "variant": "plain",
+    "process": {
+      "job": "Landscaping Job for John Smith",
+      "location": "Albancy",
+      "date": "2026-09-20"
+    },
+    "actions": [],
+    "details": "Front yard redo, new grass and edging.",
+    "story": "Owner expects high attention to detail.",
+    "comments": [],
+    "createdAt": "2026-04-20T09:34:27.659Z",
+    "updatedAt": "2026-04-20T09:34:27.665Z"
+  }
+]

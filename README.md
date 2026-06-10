@@ -1,5 +1,18 @@
 # Workpads
 
+**This repo is the project orchestrator.** Start here for rules, status, repo map, and agent orientation.
+
+| | |
+|--|--|
+| Rules | [`RULES.md`](RULES.md) |
+| Agent orientation | [`CLAUDE.md`](CLAUDE.md) |
+| Repo map | [`REPOS.md`](REPOS.md) |
+| Current status | [`STATUS.md`](STATUS.md) |
+| New contributors | [`ONBOARDING.md`](ONBOARDING.md) |
+| Normative spec | [`workpads-standard/`](../workpads-standard/README.md) |
+
+---
+
 A simple product in a complex era.
 
 Workpads is a job-record system built around one durable unit: the single work document.
@@ -212,90 +225,24 @@ Two main variants are supported conceptually:
 
 Social identity behavior is anonymous-first with optional display names.
 
-## Current CLI Capabilities
+## Reference CLI (This Repo)
 
-The CLI currently supports:
-
-- template validate/compile/show,
-- create/edit/share/import,
-- render/export/list/delete,
-- storage policy get/set/resolve (`storage:*` and `policy:*` alias support),
-- comment add/list/delete,
-- size dashboard (`lowest`, `highest`, `average`).
-
-Reference: `cli.md`
-
-## BASICS Conformance Work (Started)
-
-Workpads has begun strict BASICS conformance testing with a harsh-assessment posture.
-
-Initial artifacts:
-
-- `conformance-tests/README.md`
-- `conformance-tests/basics-dirty-2026-04-20-workpads-cli.md`
-
-Current result:
-
-- implementation is strong,
-- formal conformance evidence is incomplete,
-- Core claim is currently blocked pending policy/evidence alignment.
-
-## What Is Deliberately Paused
-
-To protect simplicity and focus:
-
-- legacy vs modern codec branching is paused,
-- encryption is paused,
-- strict size enforcement is paused.
-
-These are intentionally deferred, not forgotten.
-
-## Why This Approach Is Defensible
-
-### Product Argument
-
-- Small teams need fewer dependencies, not more.
-- Work quality improves when records are portable and readable.
-- A simple universal record model compounds value over time.
-
-### Technical Argument
-
-- Contract-first microservices reduce client divergence.
-- Local-first model improves reliability under poor connectivity.
-- Template normalization allows flexible authoring with stable runtime behavior.
-
-### Operational Argument
-
-- CLI-first development hardens contracts early.
-- Browser/KaiOS can ship faster once behaviors are proven in CLI.
-- Size dashboarding creates immediate feedback loops for payload discipline.
-
-## Near-Term Roadmap
-
-1. Keep templates production-grade and add more domain variants.
-2. Continue hardening comment and storage workflows.
-3. Bring local gateway service online so CLI/browser call identical APIs.
-4. Build browser client as a strict 1:1 contract consumer.
-5. Move to KaiOS-focused UI implementation on the same contracts.
-
-## How To Start
-
-From `repos/workpads`:
+This repo contains `workpads.js`, the original CLI implementation (v0.x). It uses a legacy encoding and is not codec-interoperable with the KaiOS app or web app. It is a useful reference for the service surface and record model.
 
 ```bash
 npm install
 node ./workpads.js help
 ```
 
-Then:
+For full command examples, see `cli.md` and `cheat-sheet.md`. For the current CLI under active development, see `workpads-cli/`.
 
-```bash
-node ./workpads.js template:validate --file ./templates/svc-basic.kv --format kv
-node ./workpads.js create --template svc-basic --variant plain --set process.job="Replace faucet"
-node ./workpads.js share --record loc_000001
-```
+## BASICS Conformance
 
-For full command examples, see `cli.md`.
+**Claim:** Core tier, BASICS v0.1.1  
+**Evidence:** `conformance-tests/`  
+**Status:** v0.1-draft — evidence artifacts present; `compatibility-policy.md` deferred to Q3 2026 after first build ships.
+
+See `STATUS.md` for current conformance state.
 
 ---
 

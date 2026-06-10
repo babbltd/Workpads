@@ -1,0 +1,135 @@
+{
+  "run": {
+    "id": "2026-04-26T07-24-47-128Z-workpads-core-dirty-test",
+    "mode": "dirty-test",
+    "target": "/Users/mp/Documents/Vaults/babb/repos/workpads",
+    "tier": "core",
+    "profiles": [
+      "shared-core",
+      "software"
+    ],
+    "timestamp": "2026-04-26T07:24:47.153Z",
+    "toolVersion": "1.1.0",
+    "rulePack": "dirty-core-v1"
+  },
+  "summary": {
+    "pass": 1,
+    "fail": 3,
+    "partial": 3,
+    "na": 0,
+    "error": 0,
+    "blockingFailures": 3
+  },
+  "results": [
+    {
+      "ruleId": "BASICS-TIER-010",
+      "status": "partial",
+      "severity": "medium",
+      "observed": "Core entry controls are incomplete (2/5).",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/cli.md"
+        },
+        {
+          "type": "code-scan",
+          "detail": "Detected local create/edit signals."
+        }
+      ],
+      "remediation": "Close missing controls: event schema, compatibility policy, degraded matrix, and local create/edit evidence.",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-EVID-002",
+      "status": "fail",
+      "severity": "high",
+      "observed": "No standalone event schema artifact found.",
+      "evidence": [
+        {
+          "type": "search",
+          "detail": "Checked common schema paths."
+        }
+      ],
+      "remediation": "Publish event-schema.md or equivalent schema artifact with version and compatibility notes.",
+      "blocking": true
+    },
+    {
+      "ruleId": "BASICS-EVID-004",
+      "status": "fail",
+      "severity": "high",
+      "observed": "No compatibility policy and no deviation registry artifacts found.",
+      "evidence": [
+        {
+          "type": "search",
+          "detail": "Checked common policy artifact paths."
+        }
+      ],
+      "remediation": "Add compatibility-policy.md and deviation-registry.md.",
+      "blocking": true
+    },
+    {
+      "ruleId": "BASICS-EVID-005",
+      "status": "partial",
+      "severity": "medium",
+      "observed": "Only one of degraded matrix / test evidence location found.",
+      "evidence": [
+        {
+          "type": "path",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/conformance-tests"
+        }
+      ],
+      "remediation": "Publish degraded-mode-matrix.md and tier test evidence artifacts.",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-SC-041",
+      "status": "pass",
+      "severity": "info",
+      "observed": "Local create/edit and local persistence signals detected.",
+      "evidence": [
+        {
+          "type": "code-scan",
+          "detail": "Detected create/edit and local storage patterns."
+        }
+      ],
+      "remediation": "",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-SC-050",
+      "status": "partial",
+      "severity": "medium",
+      "observed": "Only one interoperability baseline artifact found.",
+      "evidence": [
+        {
+          "type": "file",
+          "path": "/Users/mp/Documents/Vaults/babb/repos/workpads/cli.md"
+        }
+      ],
+      "remediation": "Publish both command and event schema baselines.",
+      "blocking": false
+    },
+    {
+      "ruleId": "BASICS-SC-051",
+      "status": "fail",
+      "severity": "high",
+      "observed": "No compatibility policy artifact found.",
+      "evidence": [
+        {
+          "type": "search",
+          "detail": "Checked common compatibility-policy paths."
+        }
+      ],
+      "remediation": "Publish compatibility-policy.md with additive/breaking/migration signaling.",
+      "blocking": true
+    }
+  ],
+  "confidence": {
+    "level": "medium-high",
+    "rationale": "Deterministic file/path checks plus heuristic code-signal checks."
+  },
+  "limits": [
+    "No exhaustive command fuzzing in v1.",
+    "Heuristic code-pattern checks can produce partial confidence."
+  ]
+}

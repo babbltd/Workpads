@@ -1,0 +1,74 @@
+product: workpads
+basicsVersion: "0.1.1"
+tier: core
+profiles:
+  - shared-core
+  - software
+evidenceUri: ./conformance-tests
+claimedDate: "2026-04-26"
+claimVersion: "v0.1-draft"
+
+deviations:
+  - id: DEV-WP-001
+    rule: BASICS-SC-001
+    enablingRule: BASICS-SC-055
+    summary: Naming surface convention — workpads uses synonyms and short forms for field names
+    mappingDoc: workpads-basicsconform/system/config/basics-naming-commentary.md
+
+evidenceArtifacts:
+  - artifact: command-surface.md
+    rules: [BASICS-EVID-001, BASICS-SC-001, BASICS-SC-002, BASICS-SC-012]
+    status: present
+  - artifact: event-schema.md
+    rules: [BASICS-EVID-002, BASICS-SC-050, BASICS-SW-002]
+    status: present
+  - artifact: deviation-registry.md
+    rules: [BASICS-EVID-004, BASICS-SC-055]
+    status: present
+  - artifact: degraded-mode-matrix.md
+    rules: [BASICS-EVID-005, BASICS-SC-040, BASICS-SC-041]
+    status: present
+  - artifact: compatibility-policy.md
+    rules: [BASICS-EVID-004, BASICS-SC-051, BASICS-SW-003]
+    status: pending
+    note: >
+      Deferred until after v0.1 ships. Compatibility policy gains credibility when
+      it can cite a real version history. Codec v=2 flag is the first worked example.
+      Expected: Q3 2026 after first KaiOS app build ships.
+
+softwareProfileEvidence:
+  SW-001: "ARCHITECTURE.md defines service ownership boundaries and contracts"
+  SW-002: "event-schema.md + codec v=2 version flag"
+  SW-010: "SC-041 PASS — local create/edit confirmed by dirty-test baseline"
+  SW-011: "Auto-save on screen transition (decisions.md R1-8) — durable mutation handling"
+  SW-012: "localStorage crash-safe + explicit STORAGE_FULL error surface"
+  SW-013: "v0.1 offline-only — no sync; sync status N/A in this release"
+  SW-030: "Minimal SSDF mapping: secure defaults (offline-only), no external deps, no auth surface"
+  SW-031: "No known critical/high vulnerabilities. Dependency surface: fflate (~8KB), QR library"
+  SW-032: "Offline-only operation is safe by default; no network calls in v0.1"
+  SW-040: "SBOM: package.json lists all npm dependencies. Formal SPDX SBOM generated at release."
+  SW-041: "Build provenance: build-provenance.md documents build environment (SLSA L1)"
+  SW-020: "DEFERRED — no sync in v0.1; conflict detection deferred to v0.2 (Field tier)"
+  SW-021: "DEFERRED — no sync in v0.1"
+
+fieldTierDeferral:
+  status: explicit
+  reason: >
+    v0.1 is offline-only by architectural decision (decisions.md R1-2, R1-9).
+    Sync, conflict detection, and conflict resolution are Field tier requirements
+    (BASICS-TIER-011, SC-042, SC-043, SW-020, SW-021). These are deferred to v0.2.
+  plannedVersion: "v0.2"
+  deferredRules:
+    - BASICS-SC-042
+    - BASICS-SC-043
+    - BASICS-SW-013
+    - BASICS-SW-020
+    - BASICS-SW-021
+
+notes: >
+  This is a v0.1-draft claim. It will be finalized when compatibility-policy.md is
+  authored after the first v0.1 build ships. The claim covers the workpads reference
+  architecture (this repo). A parallel claim for workpadskaios/ (the KaiOS app
+  implementation) will be added once app code exists and dirty-test passes against it.
+  Per decision R3-9, both repos must pass dirty-test for the full conformance claim
+  to be considered verified.

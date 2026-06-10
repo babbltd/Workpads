@@ -1,0 +1,7 @@
+run=2026-04-26T07-49-14-802Z-workpads-core-dirty-test
+target=/Users/mp/Documents/Vaults/babb/repos/workpads
+blockingFailures=1
+pass=4
+fail=1
+partial=2
+error=0

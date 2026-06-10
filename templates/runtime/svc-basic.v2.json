@@ -1,0 +1,63 @@
+{
+  "templateId": "svc-basic",
+  "version": 2,
+  "title": "Service Basic",
+  "variants": ["plain", "social"],
+  "pads": ["process", "actions", "details", "story"],
+  "screens": {
+    "1": { "pad": "process", "label": "Job" },
+    "2": { "pad": "actions", "label": "Actions", "maxItems": 20 },
+    "3": { "pad": "details", "label": "Details" },
+    "4": { "pad": "story", "label": "Story", "mode": "compiled-review-plus-narrative" }
+  },
+  "compactKeys": {
+    "job":              "j",
+    "customer":         "c",
+    "date":             "d",
+    "location":         "l",
+    "meeting_time":     "mt",
+    "start_time":       "st",
+    "end_time":         "et",
+    "customer_phone":   "cp",
+    "worker":           "w",
+    "actions[].title":  "at",
+    "actions[].notes":  "an",
+    "details":          "de",
+    "story":            "sy"
+  },
+  "fields": [
+    { "id": "job",            "label": "Job",            "type": "text", "required": true,  "max": 120,  "pad": "process", "compactKey": "j"  },
+    { "id": "customer",       "label": "Customer",       "type": "text", "required": false, "max": 120,  "pad": "process", "compactKey": "c"  },
+    { "id": "date",           "label": "Date",           "type": "date", "required": false, "max": 10,   "pad": "process", "compactKey": "d"  },
+    { "id": "location",       "label": "Location",       "type": "text", "required": false, "max": 160,  "pad": "process", "compactKey": "l"  },
+    { "id": "meeting_time",   "label": "Meeting time",   "type": "text", "required": false, "max": 40,   "pad": "process", "compactKey": "mt" },
+    { "id": "start_time",     "label": "Start time",     "type": "text", "required": false, "max": 40,   "pad": "process", "compactKey": "st",
+      "note": "Structured HH:MM preferred; free text accepted (e.g. '9am', 'mid-morning'). Duration calculated when both start and end are parseable as HH:MM." },
+    { "id": "end_time",       "label": "End time",       "type": "text", "required": false, "max": 40,   "pad": "process", "compactKey": "et",
+      "note": "Same validation behaviour as start_time." },
+    { "id": "customer_phone", "label": "Customer phone", "type": "text", "required": false, "max": 40,   "pad": "process", "compactKey": "cp" },
+    { "id": "worker",         "label": "Worker",         "type": "text", "required": false, "max": 80,   "pad": "process", "compactKey": "w",
+      "appBehaviour": { "defaultSource": "localStorage.workerNameDefault", "historyKey": "workerNameHistory", "managementScreen": true } },
+    { "id": "actions[].title","label": "Action title",   "type": "text", "required": false, "max": 100,  "pad": "actions", "compactKey": "at" },
+    { "id": "actions[].notes","label": "Action notes",   "type": "text", "required": false, "max": 300,  "pad": "actions", "compactKey": "an" },
+    { "id": "details",        "label": "Details",        "type": "text", "required": false, "max": 500,  "pad": "details", "compactKey": "de" },
+    { "id": "story",          "label": "Story",          "type": "text", "required": false, "max": 2000, "pad": "story",   "compactKey": "sy",
+      "note": "Screen 4: read-only compiled summary of screens 1–3 rendered above an editable narrative textarea. The compiled portion is display-only; only this narrative box is persisted as the story field." }
+  ],
+  "actions": {
+    "maxItems": 20,
+    "note": "Maximum 20 actions per record in v0.1. UI shows count ('Action N of 20') and disables Add at cap."
+  },
+  "codecNotes": {
+    "breakingChange": true,
+    "breakingReason": "Compact key 'st' formerly mapped to 'story'; now maps to 'start_time'. Any encoded URL produced by svc-basic v1 that contains 'st=...' is invalid under v2. Codec must version-stamp encoded links.",
+    "previousMapping": { "st": "story" },
+    "newMapping": { "st": "start_time", "sy": "story" },
+    "versionFlag": "v2",
+    "recommendation": "Prepend 'v=2' to encoded query strings for v2 records. v1 decoder path: if 'v' is absent or '1', apply old key table."
+  },
+  "basicsMapping": {
+    "source": "system/config/basics-naming-commentary.md",
+    "note": "All field names are workpads synonyms or short-forms corresponding to BASICS standard concepts. See mapping table in basics-naming-commentary.md."
+  }
+}

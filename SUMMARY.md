@@ -1,52 +1,58 @@
-# Table of contents
+# Workpads — Table of Contents
 
-* [App](https://workpads.app)
-* [Why Workpads?](README.md)
-* [CLI Cheat Sheet](cheat-sheet.md)
-* [Records for Business](records-for-business.md)
-* [Future of Workpads](future-of-workpads.md)
-* [Pillars of Protocol](pillars-of-protocol.md)
-* [Overview](overview.md)
-* [CLI Quickstart](cli.md)
+## Orchestrator
+
+* [README](README.md)
+* [Rules](RULES.md)
+* [Agent Orientation](CLAUDE.md)
+* [Repo Map](REPOS.md)
+* [Status](STATUS.md)
+* [Onboarding](ONBOARDING.md)
+
+## Development Coordination
+
+* [Key Decisions](dev/decisions.md)
+* [Deviation Summary](dev/deviations.md)
+* [Drafts Archive](dev/drafts-dump.md)
+
+## Conformance
+
 * [Conformance Tests](conformance-tests/README.md)
-  * [BASICS Dirty Test 2026-04-20](conformance-tests/basics-dirty-2026-04-20-workpads-cli.md)
+* [BASICS Claim](conformance-tests/BASICS-claim.yaml)
+* [Command Surface](conformance-tests/command-surface.md)
+* [Event Schema](conformance-tests/event-schema.md)
+* [Deviation Registry](conformance-tests/deviation-registry.md)
+* [Degraded-Mode Matrix](conformance-tests/degraded-mode-matrix.md)
+* [Dirty Test — 2026-04-20](conformance-tests/basics-dirty-2026-04-20-workpads-cli.md)
 
-## Architecture
+## Reference CLI
 
-* [Header](architecture/header/README.md)
-  * [Pad Information](architecture/header/pad-information/README.md)
-    * [Pad Creation](architecture/header/pad-information/pad-creation.md)
-    * [Pad Title](architecture/header/pad-information/pad-title.md)
-    * [Pad Dates](architecture/header/pad-information/pad-dates.md)
-    * [Pad Subject](architecture/header/pad-information/pad-subject.md)
-    * [Pad Banner](architecture/header/pad-information/pad-banner.md)
-  * [Work Information](architecture/header/work-information/README.md)
-    * [Work Sponsor](architecture/header/work-information/work-sponsor.md)
-    * [Work Outcomes](architecture/header/work-information/work-outcomes.md)
-  * [Creator Information](architecture/header/creator-information.md)
-  * [Contact Information](architecture/header/contact-information.md)
-  * [Participant Information](architecture/header/participant-information.md)
-* [Blocks](architecture/blocks/README.md)
-  * [Types of Blocks](architecture/blocks/types-of-blocks.md)
-  * [Titles](architecture/blocks/titles.md)
-  * [Content](architecture/blocks/content.md)
-  * [Media](architecture/blocks/media.md)
-  * [Time](architecture/blocks/time.md)
+* [CLI Quickstart](cli.md)
+* [CLI Cheat Sheet](cheat-sheet.md)
+
+## Templates
+
+* [Templates](templates/README.md)
+* [svc-basic KV](templates/svc-basic.kv)
+* [svc-basic YAML](templates/svc-basic.yaml)
+* [svc-basic Runtime JSON v2](templates/runtime/svc-basic.v2.json)
+
+## Architecture (Historical Reference)
+
 * [Modules](architecture/modules.md)
-  * [Microservices In Practice](architecture/microservices-practice.md)
-  * [Gateway Service](architecture/services/gateway-service.md)
-  * [Template Registry Service](architecture/services/template-registry-service.md)
-  * [Record Service](architecture/services/record-service.md)
-  * [Storage Policy Service](architecture/services/storage-policy-service.md)
-  * [Codec Service](architecture/services/codec-service.md)
-  * [Link Service](architecture/services/link-service.md)
-  * [Comment Service](architecture/services/comment-service.md)
+* [Microservices In Practice](architecture/microservices-practice.md)
+* [Gateway Service](architecture/services/gateway-service.md)
+* [Template Registry Service](architecture/services/template-registry-service.md)
+* [Record Service](architecture/services/record-service.md)
+* [Storage Policy Service](architecture/services/storage-policy-service.md)
+* [Codec Service](architecture/services/codec-service.md)
+* [Link Service](architecture/services/link-service.md)
+* [Comment Service](architecture/services/comment-service.md)
+* [Header](architecture/header/README.md)
+* [Blocks](architecture/blocks/README.md)
 * [Action Items](architecture/action-items/README.md)
-  * [Types of Actions](architecture/action-items/types-of-actions.md)
-* [Checklists](architecture/checklists.md)
-* [Footer](architecture/footer.md)
 
-## PROTOCOL
+## Protocol (Historical Reference)
 
 * [Overview](protocol/overview.md)
 * [Create](protocol/create.md)
@@ -58,11 +64,3 @@
 * [PADS Field Matrix](protocol/pads-field-matrix.md)
 * [Link](protocol/link.md)
 * [Codec Benchmark Plan](protocol/codec-benchmark-plan.md)
-* [CLI Surface](protocol/cli.md)
-
-## Templates
-
-* [Templates](templates/README.md)
-* [Service Basic KV](templates/svc-basic.kv)
-* [Service Basic YAML](templates/svc-basic.yaml)
-* [Service Basic Runtime JSON](templates/runtime/svc-basic.v1.json)
